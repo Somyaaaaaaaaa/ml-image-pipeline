@@ -28,19 +28,19 @@ image classification system.
 ## Project Structure
 
 image-ml-pipeline/
-├── src/
-│ ├── main.py # Entry point for running the pipeline
-│ ├── data_loader.py # Loads images and labels from disk
-│ ├── preprocessing.py # Image resizing and preparation
-│ ├── model.py # CNN architecture definition
-│ ├── train.py # Training loop and optimization
-│ └── evaluate.py # Model evaluation and accuracy computation
-├── data/
-│ └── images/ # Image dataset (folder-per-class)
-├── results/ # Saved outputs (future use)
-├── configs/ # Configuration files (future use)
-├── requirements.txt
-└── README.md
+- src/
+  - main.py # Entry point for running the pipeline
+  - data_loader.py # Loads images and labels from disk
+  - preprocessing.py # Image resizing and preparation
+  - model.py # CNN architecture definition
+  - train.py # Training loop and optimization
+  - evaluate.py # Model evaluation and accuracy computation
+- data/
+  - images/ # Image dataset (folder-per-class)
+- results/ # Saved outputs (future use)
+- configs/ # Configuration files (future use)
+- requirements.txt
+- README.md
 
 
 ---
@@ -60,6 +60,7 @@ From the project root:
 
 python src/main.py
 
+----
 
 This will:
 - load images from `data/images`
