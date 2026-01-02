@@ -1,4 +1,7 @@
 import torch
+import json
+import os
+
 def evaluate(model, images, labels):
     model.eval()
 
@@ -23,4 +26,9 @@ def evaluate(model, images, labels):
             total += 1
 
     accuracy = correct / total if total > 0 else 0.0
+
+    os.makedirs("results", exist_ok=True)
+    with open("results/metrics.json", "w") as f:
+        json.dump({"accuracy": accuracy}, f, indent=4)
+
     return {"accuracy": accuracy}
