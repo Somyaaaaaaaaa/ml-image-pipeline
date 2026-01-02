@@ -1,19 +1,78 @@
-# Image ML Experiment Framework
+# Image ML Pipeline
 
-A lightweight, reproducible framework for running image-based machine learning experiments.
-Focused on clean data loading, preprocessing, training, and evaluation.
+An end-to-end, reproducible image-based machine learning pipeline built from scratch.
+The project demonstrates the complete workflow of loading image data from disk,
+preprocessing it, training a simple convolutional neural network, and evaluating results.
 
-## Setup
-pip install -r requirements.txt
+This repository focuses on correctness, clarity, and reproducibility rather than model performance.
+
+---
+
+## Project Overview
+
+The pipeline follows this flow:
+
+Data (images on disk)
+→ Data Loading
+→ Preprocessing
+→ Model Definition
+→ Training
+→ Evaluation
+→ Metrics
+
+The goal is to provide a clean reference implementation of a minimal but real
+image classification system.
+
+---
 
 ## Project Structure
-- src/      : source code for data loading, models, and training
-- data/     : datasets (not tracked)
-- results/  : outputs, metrics, and artifacts
-- configs/  : experiment and training configurations
 
-## Running
-Placeholder. Will be updated as the pipeline is implemented.
+image-ml-pipeline/
+├── src/
+│ ├── main.py # Entry point for running the pipeline
+│ ├── data_loader.py # Loads images and labels from disk
+│ ├── preprocessing.py # Image resizing and preparation
+│ ├── model.py # CNN architecture definition
+│ ├── train.py # Training loop and optimization
+│ └── evaluate.py # Model evaluation and accuracy computation
+├── data/
+│ └── images/ # Image dataset (folder-per-class)
+├── results/ # Saved outputs (future use)
+├── configs/ # Configuration files (future use)
+├── requirements.txt
+└── README.md
+
+
+---
+
+## Setup
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+---
+
+## Running the Project
+
+From the project root:
 
 python src/main.py
 
+
+This will:
+- load images from `data/images`
+- preprocess them to a fixed size
+- train a simple CNN
+- evaluate the model
+- print final accuracy
+
+---
+
+## Notes
+
+- This project is intentionally minimal.
+- The dataset is small and accuracy is not a goal.
+- The focus is on understanding and implementing the full ML pipeline correctly.
+- The structure is designed to be extended with larger datasets, batching, and configuration files.

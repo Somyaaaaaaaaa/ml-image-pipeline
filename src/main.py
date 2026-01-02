@@ -1,20 +1,18 @@
 from data_loader import load_data
 from preprocessing import preprocess
-from model import build_model
+from model import SimpleCNN
 from train import train
 from evaluate import evaluate
 
 
 def main():
-    data = load_data()
-    data = preprocess(data)
-    model = build_model()
-    model = train(model, data)
-    metrics = evaluate(model, data)
+    images, labels = load_data() #load data
+    images = preprocess(images) #preprocess data
+    model = SimpleCNN(num_classes=2) #build model
+    model = train(model, images, labels, epochs = 5) #train model
+    metrics = evaluate(model, images, labels) #evaluate model
 
-    print("Pipeline finished.")
-    print("Metrics:", metrics)
-
+    print ("Final Metrics:", metrics)
 
 if __name__ == "__main__":
     main()
